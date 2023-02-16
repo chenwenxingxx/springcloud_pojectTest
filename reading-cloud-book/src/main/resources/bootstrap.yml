@@ -1,0 +1,30 @@
+spring:
+  # 服务逻辑名称
+  application:
+    name: light-reading-cloud-book
+
+  cloud:
+    nacos:
+      # 配置中心
+      config:
+        server-addr: 127.0.0.1:8848
+        refresh: true
+        prefix: light-reading-cloud-book
+        file-extension: yml
+        shared-dataids: light-reading-cloud-book.yml
+#        namespace: 4d109a4d-f34d-4e86-9e39-c2d36db24b00
+
+      # 注册中心
+      discovery:
+        server-addr: 127.0.0.1:8848
+#        namespace: 4d109a4d-f34d-4e86-9e39-c2d36db24b00
+    sentinel:
+      transport:
+        #配置Sentinel dashboard地址
+        dashboard: localhost:8080
+        #   #默认8719端口，假如被占用会自动从8719开始依次+1扫描,直至找到未被占用的端口
+        port: 8719
+        #取消控制台懒加载
+      eager: true
+
+
